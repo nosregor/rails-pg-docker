@@ -79,7 +79,7 @@ in your project directory. You can use the same terminal window in which you sta
 ```
 docker-compose run --rm web bin/rails g scaffold task title:string notes:string due:datetime completion:integer  
 
-docker-compose run --rm web bin/rake db:migrate
+docker-compose run --rm web bin/rake db:setup db:migrate
 
 docker-compose up
 
