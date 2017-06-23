@@ -67,4 +67,8 @@ That’s it. Your app should now be running on port 3002 on your Docker daemon.
 On Docker for Mac and Docker for Windows, go to http://localhost:3002 on a web browser to see the Rails Welcome.
 
 # Stop the application
-To stop the application, run docker-compose down in your project directory. You can use the same terminal window in which you started the database, or another one where you have access to a command prompt. This is a clean way to stop the application.
+To stop the application, run 
+```
+docker-compose down 
+```
+in your project directory. You can use the same terminal window in which you started the database, or another one where you have access to a command prompt. This is a clean way to stop the application.
