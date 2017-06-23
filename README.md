@@ -20,6 +20,7 @@ A Gemfile which just loads Rails. It’ll be overwritten in a moment by rails ne
 # Commands
 ```
 docker-compose run --rm web bundle install
+
 docker-compose run --rm web bundle exec rails new . -d postgresql
 ```
 
@@ -50,4 +51,10 @@ test:
   
 ```
 # Starting Up
-Now that your Dockerfile and docker-compose.yml are written, and your application is configured to connect to the containered services, all that’s left before you can start your application
+Now that your Dockerfile and docker-compose.yml are written, and your application is configured to connect to the containered services, all that’s left before you can start your application.
+
+```
+docker-compose run --rm web bundle
+
+docker-compose run --rm web bin/rake db:setup
+```
