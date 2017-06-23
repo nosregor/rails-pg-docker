@@ -56,6 +56,8 @@ Now that your Dockerfile and docker-compose.yml are written, and your applicatio
 ```
 docker-compose run --rm web bundle
 
+docker-compose run --rm web bin/rails g scaffold task title:string notes:string due:datetime completion:integer  
+
 docker-compose run --rm web bin/rake db:setup
 
 docker-compose up
@@ -72,3 +74,6 @@ To stop the application, run
 docker-compose down 
 ```
 in your project directory. You can use the same terminal window in which you started the database, or another one where you have access to a command prompt. This is a clean way to stop the application.
+
+
+
