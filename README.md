@@ -18,8 +18,10 @@ If you have multiple Rails applications that you're working on, you can just cop
 A Gemfile which just loads Rails. It’ll be overwritten in a moment by rails new.
 
 # Commands
+```
 docker-compose run --rm web bundle install
 docker-compose run --rm web bundle exec rails new . -d postgresql
+```
 
 Note: Be sure to overwrite the Gemfile when prompted to do so.
 
