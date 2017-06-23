@@ -1,0 +1,20 @@
+version: '2'
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres_database
+    volumes:
+      - ../sqldumps:/sqldumps
+  web:
+    # builds the Docker image using the Dockerfile
+    build: .
+    # Now that we have our image, run it
+    command: bin/rails server --port 3000 --binding 0.0.0.0
+    volumes:
+      - .:/myapp
+    ports:
+      - "3002:3000"
+    links:
+      - db:postgres
