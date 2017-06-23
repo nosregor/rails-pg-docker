@@ -56,5 +56,7 @@ Now that your Dockerfile and docker-compose.yml are written, and your applicatio
 ```
 docker-compose run --rm web bundle
 
-docker-compose run --rm web bin/rake db:migrate
+docker-compose run --rm web bin/rake db:setup
+
+docker-compose up
 ```
