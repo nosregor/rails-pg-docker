@@ -28,7 +28,7 @@ Note: Be sure to overwrite the Gemfile when prompted to do so.
 By default, Rails expects a database to be running on localhost - so you need to point it at the db container instead. You also need to change the database and username to align with the defaults set by the postgres image.
 
 Replace the contents of config/database.yml with the following:
-´´´
+```ruby
 default: &default
   adapter: postgresql
   encoding: unicode
@@ -46,6 +46,6 @@ test:
   <<: *default
   database: myapp_test
   
-´´´
+```
 # Starting Up
 Now that your Dockerfile and docker-compose.yml are written, and your application is configured to connect to the containered services, all that’s left before you can start your application
