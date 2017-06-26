@@ -18,7 +18,7 @@ WORKDIR $APP_HOME
 # change.
 ADD Gemfile $APP_HOME/
 ADD Gemfile.lock $APP_HOME/
-RUN bundle install
+RUN bundle install && bunlde update
 
 # Everything up to here was cached. This includes the bundle install, unless
 # the Gemfiles changed. Now copy the app into the image.
