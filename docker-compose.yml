@@ -3,8 +3,9 @@ services:
   db:
     image: postgres
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_DB: postgres_database
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pgpass
+      POSTGRES_DB: pgdb
     volumes:
       - ../sqldumps:/sqldumps
   web:
