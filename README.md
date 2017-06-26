@@ -39,7 +39,15 @@ default: &default
   username: postgres
   password:
   pool: 5
-
+  
+  adapter: postgresql 
+  encoding: unicode 
+  pool: 5 
+  timeout: 5000 
+  username: postgres 
+  host: postgres
+  port: 5432
+  
 development:
   <<: *default
   database: myapp_development
