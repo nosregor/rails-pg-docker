@@ -17,7 +17,7 @@ WORKDIR $APP_HOME
 # project is copied to avoid do bundle install every time some project file
 # change.
 ADD Gemfile* $APP_HOME/
-RUN bundle install
+RUN gem install bundler && bundle install --jobs 20 --retry 5
 
 # Everything up to here was cached. This includes the bundle install, unless
 # the Gemfiles changed. Now copy the app into the image.
