@@ -16,7 +16,8 @@ WORKDIR $APP_HOME
 # Copy the Gemfile and Gemfile.lock into the image and install gems before the
 # project is copied to avoid do bundle install every time some project file
 # change.
-ADD Gemfile* $APP_HOME/
+ADD Gemfile $APP_HOME/
+ADD Gemfile.lock $APP_HOME/
 RUN bundle install
 
 # Everything up to here was cached. This includes the bundle install, unless
