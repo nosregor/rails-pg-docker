@@ -43,6 +43,19 @@ RUN bundle update && bundle install
 ADD . $APP_HOME
 ```
 
+After adding the above file as Dockerfile to your repository, we can now build the container and start running commands with it. We specify a tag via the -t option, so we can reference the container later on.
+
+```
+docker build -t demo .
+docker run -it demo "bundle exec rake test"
+docker run -itP demo
+```
+
+- Here are some explanations for the commands above:
+docker run runs tasks in a Docker container. This is most commonly used for one-off tasks but is also very helpful in development.
+- The -P option causes all ports defined in the Dockerfile to be exposed to unprivileged ports on the host and thus be accessible from the outside.
+- If we don’t specify a command to run on the command line, the command defined by the CMD setting will be run instead.
+
 Now that you’ve written the Dockerfile for your application image, you need to put together the puzzle pieces of your application, for instance your database.
 
 If you have multiple Rails applications that you're working on, you can just copy the Dockerfile and docker-comopse.yml, and as long as you change 3001 in the web container's ports configuration to something else, you'll never run into any port conflicts when trying to run multiple apps at the same time.
