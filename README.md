@@ -1,4 +1,4 @@
-All information was gahered https://docs.docker.com/compose/rails/
+All information used here was taken from https://docs.docker.com/compose/rails/
 
 ## Quickstart: Rails Development with Docker
 
