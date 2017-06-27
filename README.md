@@ -105,7 +105,7 @@ First, Compose will build the image for the web service using the Dockerfile. Th
 Now that you’ve got a new Gemfile, you need to build the image again. (This, and changes to the Gemfile or the Dockerfile, should be the only times you’ll need to rebuild.)
 
 ```
-docker-compose build
+docker-compose build web
 ```
 
 # Connect the database
