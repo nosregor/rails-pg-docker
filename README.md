@@ -146,7 +146,7 @@ docker-compose up
 Finally, you need to create the database. In another terminal, run:
 
 ```
-docker-compose run web rake db:create
+docker-compose run --rm web rake db:create
 ```
 
 # View the Rails welcome page!
