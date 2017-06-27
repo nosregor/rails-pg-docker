@@ -1,12 +1,8 @@
-## Quickstart: Compose and Rails
+## Quickstart: Rails Development with Docker
 
 Dockerizing a Rails Application
 
-Rails Development with Docker
-
 Quickstart guide to show you how to use Docker Compose to set up and run a Rails/PostgreSQL app. 
-
-This repo consists of: 
 
 # Define the project
 Start by setting up the four files you’ll need to build the app. First, since your app is going to run inside a Docker container containing all of its dependencies, you’ll need to define exactly what needs to be included in the container. This is done using a file called Dockerfile. 
