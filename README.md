@@ -169,8 +169,11 @@ To resolve this, delete the file tmp/pids/server.pid, and then re-start the appl
 # Restart the application
 To restart the application:
 
-### 1. Run ```docker-compose up``` in the project directory.
-### 2. Run this command in another terminal to restart the database: ```docker-compose run web rake db:create```
+### 1. Run the following in the project directory.
+```docker-compose up``` 
+
+### 2. Run this command in another terminal to restart the database: 
+```docker-compose run web rake db:create```
 
 # Rebuild the application
 If you make changes to the Gemfile or the Compose file to try out some different configurations, you will need to rebuild. Some changes will require only ```docker-compose up --build```, but a full rebuild requires a re-run of ```docker-compose run web bundle install``` to sync changes in the ```Gemfile.lock``` to the host, followed by ```docker-compose up --build```.
