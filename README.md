@@ -140,7 +140,7 @@ production:
 You can now boot the app with docker-compose up:
 
 ```
-docker-compose up
+docker-compose up web
 ```
 
 Finally, you need to create the database. In another terminal, run:
