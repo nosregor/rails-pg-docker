@@ -1,4 +1,7 @@
 # rails-pg-docker
+
+Dockerizing a Rails Application
+
 Rails Development with Docker
 
 Quickstart guide to show you how to use Docker Compose to set up and run a Rails/PostgreSQL app. 
@@ -6,9 +9,39 @@ Quickstart guide to show you how to use Docker Compose to set up and run a Rails
 This repo consists of: 
 
 # Dockerfile
-Since your app is going to run inside a Docker container containing all of its dependencies, you’ll need to define exactly what needs to be included in the container. This is done using a file called Dockerfile, we are going to be basing our image on the official Alpine Linux-based Ruby image.
 
-That’ll put your application code inside an image that will build a container with Ruby, Bundler and all your dependencies inside it. 
+Docker applications are configured via a Dockerfile, which defines how the container is built. Since your app is going to run inside a Docker container containing all of its dependencies, you’ll need to define exactly what needs to be included in the container. This is done using a file called Dockerfile, we are going to be basing our image on the official Alpine Linux-based Ruby image.
+
+Many images are readily available, and you can search for a suitable base image at the Docker Hub. We are using ruby:2.4.1-alpine base image. That’ll put your application code inside an image that will build a container with Ruby, Bundler and all your dependencies inside it. 
+
+```
+# Dockerfile
+FROM ruby:2.4.1-alpine
+# Install dependencies.
+RUN apk add --update --no-cache \
+      build-base \
+      nodejs \
+      tzdata \
+      libxml2-dev \
+      libxslt-dev \
+      postgresql-dev \
+      imagemagick
+RUN bundle config build.nokogiri --use-system-libraries
+# Setup app directory.
+ENV APP_HOME /myapp
+RUN mkdir -p $APP_HOME
+WORKDIR $APP_HOME
+# Copy the Gemfile and Gemfile.lock into the image and install gems before the
+# project is copied to avoid do bundle install every time some project file
+# change.
+ADD Gemfile $APP_HOME/
+ADD Gemfile.lock $APP_HOME/
+RUN bundle update && bundle install
+
+# Everything up to here was cached. This includes the bundle install, unless
+# the Gemfiles changed. Now copy the app into the image.
+ADD . $APP_HOME
+```
 
 Now that you’ve written the Dockerfile for your application image, you need to put together the puzzle pieces of your application, for instance your database.
 
