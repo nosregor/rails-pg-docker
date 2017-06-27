@@ -1,3 +1,5 @@
+All information was gahered https://docs.docker.com/compose/rails/
+
 ## Quickstart: Rails Development with Docker
 
 Dockerizing a Rails Application
@@ -181,7 +183,7 @@ If you make changes to the Gemfile or the Compose file to try out some different
 Here is an example of the first case, where a full rebuild is not necessary. Suppose you simply want to change the exposed port on the local host from ```3000``` in our first example to ```3002```. Make the change to the Compose file to expose port 3000 on the container through a new port, 3001, on the host, and save the changes:
 
 ```
-ports: - "3001:3000"
+ports: - "3002:3000"
 ```
 Now, rebuild and restart the app with ```docker-compose up --build```, then restart the database: ```docker-compose run web rake db:create```.
 
