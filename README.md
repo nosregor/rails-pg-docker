@@ -65,7 +65,7 @@ gem 'rails', '5.0.0.1'
 
 You’ll need an empty Gemfile.lock in order to build our Dockerfile.
 
-### 3. Gemfile
+### 3. Gemfile.lock
 ```
 touch Gemfile.lock
 ```
