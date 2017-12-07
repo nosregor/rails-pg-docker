@@ -86,7 +86,7 @@ services:
     volumes:
       - .:/myapp
     ports:
-      - "3002:3000"
+      - "3000:3000"
     links:
       - db:postgres
 ```
