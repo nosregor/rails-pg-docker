@@ -16,7 +16,7 @@ Many images are readily available, and you can search for a suitable base image 
 ### 1. Dockerfile
 ```
 # Dockerfile
-FROM ruby:2.4.1-alpine
+FROM ruby:2.4.2-alpine
 
 # Install dependencies.
 RUN apk add --update --no-cache \
