@@ -58,7 +58,7 @@ Next, create a bootstrap Gemfile which just loads Rails. It’ll be overwritten 
 ### 2. Gemfile
 ```
 source 'https://rubygems.org'
-gem 'rails', '5.0.0.1'
+gem 'rails', '5.1.4'
 ```
 
 You’ll need an empty Gemfile.lock in order to build our Dockerfile.
