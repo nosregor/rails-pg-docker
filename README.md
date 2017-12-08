@@ -26,6 +26,7 @@ RUN apk add --update --no-cache \
       libxml2-dev \
       libxslt-dev \
       postgresql-dev \
+      postgresql \
       imagemagick
 RUN bundle config build.nokogiri --use-system-libraries
 
@@ -75,7 +76,7 @@ Finally, docker-compose.yml is where the magic happens. This file describes the 
 version: '2'
 services:
   db:
-    image: postgres
+    image: postgres:9.6
     volumes:
       - ../sqldumps:/sqldumps
   web:
