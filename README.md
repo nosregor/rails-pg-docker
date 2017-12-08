@@ -76,7 +76,10 @@ Finally, docker-compose.yml is where the magic happens. This file describes the 
 version: '2'
 services:
   db:
-    image: postgres:9.6
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres_database
     volumes:
       - ../sqldumps:/sqldumps
   web:
